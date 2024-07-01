@@ -20,8 +20,6 @@
 
     "paths": {
       "@/*": ["./*"]
-    },
-    "output.exports": "named"
     }
   }
-
+}
