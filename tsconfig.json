@@ -1,0 +1,27 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.cypress-ct.json"
+    }
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "ES2015",
+    "strictNullChecks": false,
+    "types": ["vite/client"],
+    "target": "esnext",
+
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "output.exports": "named"
+    }
+  }
+
