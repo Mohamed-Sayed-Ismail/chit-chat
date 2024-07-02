@@ -1,6 +1,6 @@
 ## vue-chit-chat
 
-![chitchat](https://github.com/Mohamed-Sayed-Ismail/chit-chat/blob/main/chitchat.gif)
+![chitchat](https://github.com/Mohamed-Sayed-Ismail/chit-chat/blob/master/chitchat.gif)
 
 ### Install
 
