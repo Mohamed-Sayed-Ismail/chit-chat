@@ -1,0 +1,61 @@
+<script setup lang="ts">
+import { User } from './../../class/User.js';
+
+const props = defineProps({
+  user: {
+    type: User
+  },
+  iconColorOnline: {
+    type: String,
+    default: "#37ac2e"
+  },
+  iconDarkOnline: {
+    type: String,
+    default: "#77f96e"
+  },
+  iconColorOffline: {
+    type: String,
+    default: "#e23e3e"
+  },
+  iconDarkOffline: {
+    type: String,
+    default: "#6c075d"
+  },
+  isDark: {
+    type: Boolean,
+    default: false
+  }
+})
+let fillColor = '';
+switch (props.user!.isOnline) {
+  case true:
+    switch (props.isDark) {
+      case true: fillColor = props.iconDarkOnline
+        break
+      default: fillColor = props.iconColorOnline
+        break
+    }
+    break
+  case false:
+    switch (props.isDark) {
+      case true: fillColor = props.iconDarkOffline
+        break
+      case false: fillColor = props.iconColorOffline
+        break
+      default: fillColor = '#ccc'
+        break
+    }
+    break
+  default: fillColor = '#ccc'
+    break
+}
+
+</script>
+<template>
+  <div>
+    <svg :fill="fillColor" viewBox="-1 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14.145 16.629a24 24 0 0 1-.052-2.525l-.001.037a4.85 4.85 0 0 0 1.333-2.868l.002-.021c.339-.028.874-.358 1.03-1.666a1.22 1.22 0 0 0-.455-1.218l-.003-.002c.552-1.66 1.698-6.796-2.121-7.326C13.485.35 12.479 0 11.171 0c-5.233.096-5.864 3.951-4.72 8.366a1.22 1.22 0 0 0-.455 1.229l-.001-.008c.16 1.306.691 1.638 1.03 1.666a4.86 4.86 0 0 0 1.374 2.888 25 25 0 0 1-.058 2.569l.005-.081C7.308 19.413.32 18.631 0 24h22.458c-.322-5.369-7.278-4.587-8.314-7.371z" />
+    </svg>
+  </div>
+</template>
